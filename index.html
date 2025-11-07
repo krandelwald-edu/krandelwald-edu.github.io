@@ -5,32 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map Codes</title>
   <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --card-bg: #fff;
+      --card-border: #ddd;
+      --button-bg: #007bff;
+      --button-hover: #0056b3;
+      --code-bg: #eee;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #f1f1f1;
+        --card-bg: #1e1e1e;
+        --card-border: #333;
+        --button-bg: #1a73e8;
+        --button-hover: #4285f4;
+        --code-bg: #2a2a2a;
+      }
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      background: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding: 20px;
-      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: background 0.3s, color 0.3s;
     }
 
     h1 {
       margin-bottom: 20px;
-      color: #222;
     }
 
     .map-card {
-      background: #fff;
-      border: 1px solid #ddd;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       padding: 20px;
       margin: 10px;
       width: 300px;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.3s, border 0.3s;
     }
 
     .map-card:hover {
@@ -43,9 +65,9 @@
       font-weight: bold;
     }
 
-    .map-code {
+    .code-box {
       font-family: monospace;
-      background: #eee;
+      background: var(--code-bg);
       padding: 8px 10px;
       border-radius: 5px;
       display: inline-block;
@@ -53,7 +75,7 @@
     }
 
     button {
-      background-color: #007bff;
+      background-color: var(--button-bg);
       color: white;
       border: none;
       border-radius: 5px;
@@ -63,35 +85,42 @@
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--button-hover);
     }
 
     footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #666;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
-  <h1>My Map Codes</h1>
+  <h1>Tim's Map Codes</h1>
 
   <!-- Example Map Entry -->
   <div class="map-card">
-    <div class="map-name">Example Map 1</div>
-    <div class="map-code" id="code1">1234-5678-9012</div>
+    <div class="map-name">Track 1</div>
+    <div class="code-box" id="code1">1234-5678-9012</div>
     <button onclick="copyCode('code1')">Copy Code</button>
   </div>
 
   <!-- Duplicate Below for More Maps -->
   <div class="map-card">
-    <div class="map-name">Example Map 2</div>
-    <div class="map-code" id="code2">9876-5432-1098</div>
+    <div class="map-name">Monza Temple of Sped</div>
+    <div class="code-box" id="code2">9876-5432-1098</div>
     <button onclick="copyCode('code2')">Copy Code</button>
   </div>
 
-  <footer>© 2025 Your Name or Website</footer>
+  <!-- Duplicate Below for More Maps -->
+  <div class="map-card">
+    <div class="map-name">Downforce or Forced Down</div>
+    <div class="code-box" id="code2">9876-5432-1098</div>
+    <button onclick="copyCode('code2')">Copy Code</button>
+  </div>
+
+  <footer>© 2025 Gao Productions</footer>
 
   <script>
     function copyCode(codeId) {
