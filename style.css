@@ -70,16 +70,11 @@ button:hover {
   background-color: var(--button-hover);
 }
 
-footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  opacity: 0.8;
-}
-
 .hidden {
   display: none;
 }
 
+/* Footer styling */
 .footer-container {
   display: flex;
   justify-content: center;
@@ -98,6 +93,6 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   .github-link img {
-   filter: invert(1);
+    filter: invert(1);
   }
 }
