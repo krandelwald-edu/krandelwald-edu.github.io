@@ -79,3 +79,25 @@ footer {
 .hidden {
   display: none;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.github-link img {
+  width: 20px;
+  height: 20px;
+  filter: invert(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .github-link img {
+   filter: invert(1);
+  }
+}
