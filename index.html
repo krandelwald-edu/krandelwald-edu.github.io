@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Codes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .map-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .map-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .map-name {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .map-code {
+      font-family: monospace;
+      background: #eee;
+      padding: 8px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Map Codes</h1>
+
+  <!-- Example Map Entry -->
+  <div class="map-card">
+    <div class="map-name">Example Map 1</div>
+    <div class="map-code" id="code1">1234-5678-9012</div>
+    <button onclick="copyCode('code1')">Copy Code</button>
+  </div>
+
+  <!-- Duplicate Below for More Maps -->
+  <div class="map-card">
+    <div class="map-name">Example Map 2</div>
+    <div class="map-code" id="code2">9876-5432-1098</div>
+    <button onclick="copyCode('code2')">Copy Code</button>
+  </div>
+
+  <footer>© 2025 Your Name or Website</footer>
+
+  <script>
+    function copyCode(codeId) {
+      const codeElement = document.getElementById(codeId);
+      navigator.clipboard.writeText(codeElement.textContent).then(() => {
+        alert("Copied: " + codeElement.textContent);
+      });
+    }
+  </script>
+
+</body>
+</html>
